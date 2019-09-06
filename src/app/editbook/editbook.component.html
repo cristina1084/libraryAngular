@@ -1,1 +1,49 @@
-<p>editbook works!</p>
+<div class="card-body">
+    <div class="row justify-content-center ">
+        <div class="col col-12 col-sm-12 col-md-12 col-lg-12">    
+            <div class="card" id="card2">
+                <h5 class="card-header text-center"> Edit Book </h5>
+                <div class="card-body">
+                    <form action="/books/edit" method="POST" enctype="multipart/form-data">
+                        <table class="table table-borderless">
+                            <tr>
+                                <td> Title </td>
+                                <td> <input type="text" name="title" class="form-control" value="<%= book[0].bookTitle %>" required> </td>
+                            </tr>
+                            <br>
+                            <tr>
+                                <td> Author </td>
+                                <td> <input type="text" class="form-control" name="author" value="<%= book[0].author%>"> </td>
+                            </tr>
+                            <br>
+                            <tr>
+                                <td> Genre </td>
+                                <td> <input type="text" class="form-control" name="genre" value="<%= book[0].genre%>"> </td>
+                            </tr>
+                            <br>
+                            <tr>
+                                <td> Description </td>
+                                <td> <input type="text" class="form-control" name="description" value="<%= book[0].description %>" > </td>
+                            </tr>
+                            <br>
+                            <tr>
+                                <td> Price </td>
+                                <td> <input type="number" class="form-control" name="price" value="<%= book[0].price %>"> </td>
+                            </tr>
+                            <br>
+                            <tr>
+                                <td> Upload Image </td>
+                                <td> <input type="file" class="form-control" name="bimage" required> </td>
+                            </tr>
+                            <br>
+                            <tr>
+                                <td> </td>
+                                <td> <button type="submit" class="btn btn-success"> Update </button></td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

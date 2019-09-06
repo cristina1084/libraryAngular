@@ -1,1 +1,49 @@
-<p>signup works!</p>
+<div class="card-body">
+    <div class="row justify-content-center ">
+        <div class="col col-12 col-sm-12 col-md-6 col-lg-6">    
+            <div class="card" id="card2">
+                <h5 class="card-header text-center"> Sign Up </h5>
+                <div class="card-body">
+                        <table class="table table-borderless">
+                            <tr>
+                                <td> Name </td>
+                                <td> <input type="text" name="name" class="form-control" [(ngModel)]="name"> </td>
+                            </tr>
+                            <br>
+                            <tr>
+                                <td> Email </td>
+                                <td> <input type="email" class="form-control" name="email" [(ngModel)]="email"> </td>
+                            </tr>
+                            <br>
+                            <tr>
+                                <td> Mobile </td>
+                                <td> <input type="number" class="form-control" name="mobile" [(ngModel)]="mobile"> </td>
+                            </tr>
+                            <br>
+                            <tr>
+                            <td> Role </td>
+                            <td> <input type="text" class="form-control" name="role" placeholder="Admin/User" [(ngModel)]="role"> </td>
+                            </tr>
+                            <br>
+                            <tr>
+                                <td> Username </td>
+                                <td> <input type="text" class="form-control" name="username" [(ngModel)]="uname"> </td>
+                            </tr>
+                            <br>
+                            <tr>
+                                <td> Password </td>
+                                <td> <input type="password"  class="form-control" name="password" [(ngModel)]="pwd"> </td>
+                            </tr>
+                            <br>
+                            <tr>
+                                <td> <button type="reset" class="btn btn-primary"> Reset </button></td>
+                                <td> <button type="button" class="btn btn-success" routerLink=""> Register </button></td>
+                            </tr>
+                        </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+              
+          

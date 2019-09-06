@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from "@angular/forms";
+import { HttpClientModule } from "@angular/common/http";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,9 +12,14 @@ import { AuthordetailComponent } from './authordetail/authordetail.component';
 import { AuthorsComponent } from './authors/authors.component';
 import { BooksComponent } from './books/books.component';
 import { EditbookComponent } from './editbook/editbook.component';
-import { IndexComponent } from './index/index.component';
 import { ReadmoreComponent } from './readmore/readmore.component';
 import { UpdatebookComponent } from './updatebook/updatebook.component';
+import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { MainComponent } from './main/main.component';
+
+import { LibraryService } from "./library.service";
 
 @NgModule({
   declarations: [
@@ -24,15 +31,20 @@ import { UpdatebookComponent } from './updatebook/updatebook.component';
     AuthorsComponent,
     BooksComponent,
     EditbookComponent,
-    IndexComponent,
     ReadmoreComponent,
-    UpdatebookComponent
+    UpdatebookComponent,
+    HomeComponent,
+    HeaderComponent,
+    FooterComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [LibraryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
