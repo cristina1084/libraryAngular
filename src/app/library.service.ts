@@ -15,4 +15,12 @@ export class LibraryService {
   getBookById(bid){
     return this.http.get("http://localhost:8080/books/"+bid);
   }
+
+  getAuthors(){
+    return this.http.get("http://localhost:8080/authors/getauthors");
+  }
+
+  getAuthorsById(aid){
+    return this.http.get("http://localhost:8080/authors/"+aid);
+  }
 }

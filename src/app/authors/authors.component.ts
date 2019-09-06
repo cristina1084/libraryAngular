@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LibraryService } from "../library.service";
 
 @Component({
   selector: 'app-authors',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AuthorsComponent implements OnInit {
 
-  constructor() { }
+  authors;
+
+  constructor(private library: LibraryService) { }
 
   ngOnInit() {
+    this.library.getAuthors().subscribe(data=>{
+      this.authors = data;
+    })
   }
 
 }

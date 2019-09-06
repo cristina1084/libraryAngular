@@ -22,7 +22,7 @@ const routes: Routes = [
     {path:"books", component: BooksComponent, },
     {path:"authors", component: AuthorsComponent},
     {path:"addbook", component: AddbookComponent },
-    {path:"authordetail", component: AuthordetailComponent},
+    {path:":aid", component: AuthordetailComponent},
     {path:"editbook", component: EditbookComponent},
     {path:"updatebook", component: UpdatebookComponent},
     {path:":bid", component: ReadmoreComponent}
