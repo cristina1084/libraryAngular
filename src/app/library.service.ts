@@ -13,14 +13,26 @@ export class LibraryService {
   }
 
   getBookById(bid){
-    return this.http.get("http://localhost:8080/books/"+bid);
+    return this.http.get("http://localhost:8080/books/" + bid);
   }
 
   getAuthors(){
     return this.http.get("http://localhost:8080/authors/getauthors");
   }
 
-  getAuthorsById(aid){
-    return this.http.get("http://localhost:8080/authors/"+aid);
+  getAuthorById(aid){
+    return this.http.get("http://localhost:8080/authors/" + aid);
+  }
+
+  deleteBook(dbid){
+    return this.http.get("http://localhost:8080/books/delete/" + dbid);
+  }
+
+  editBook(data){
+    return this.http.post("http://localhost:8080/books/edit/", data)
+  }
+
+  addNewBook(book){
+    return this.http.post("http://localhost:8080/books/add/", book)
   }
 }

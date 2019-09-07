@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LibraryService } from "../library.service";
 
 @Component({
   selector: 'app-updatebook',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UpdatebookComponent implements OnInit {
 
-  constructor() { }
+  constructor(private library: LibraryService) { }
+ 
+  books:any;
 
   ngOnInit() {
+    this.library.getBooks().subscribe(data=>{
+      console.log(data);
+      this.books = data;
+    })
   }
 
+  deleteBook(bktitle){
+    this.library.deleteBook(bktitle).subscribe(data=>{
+      this.books = data;
+    })
+  }
 }

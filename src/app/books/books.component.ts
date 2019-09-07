@@ -8,9 +8,11 @@ import { LibraryService } from "../library.service";
 })
 export class BooksComponent implements OnInit {
 
-  constructor(private library: LibraryService) { }
-
   books:any;
+
+  constructor(private library: LibraryService) { 
+  }
+
 
   ngOnInit() {
     this.library.getBooks().subscribe(data=>{

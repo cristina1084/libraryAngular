@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from "@angular/router";
+import { LibraryService } from "../library.service";
+import {  FileUploader, FileSelectDirective } from 'ng2-file-upload/ng2-file-upload';
+
+const URL = 'http://localhost:8080/books/edit';
 
 @Component({
   selector: 'app-editbook',
@@ -7,9 +12,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditbookComponent implements OnInit {
 
-  constructor() { }
+  bookid;
+  book={};
+  file;
+  public uploader: FileUploader = new FileUploader({ url: URL, itemAlias: 'bimage' });
+
+  constructor(private router: Router, private route: ActivatedRoute, private library: LibraryService) { }
 
   ngOnInit() {
+    this.bookid = this.route.snapshot.paramMap.get('bid');
+    console.log(this.bookid);
+    
+    this.library.getBookById(this.bookid).subscribe(data=>{
+      console.log(data);
+      this.book = data;
+    });
+
+    this.uploader.onAfterAddingFile = (file) => { file.withCredentials = false; };
+    this.uploader.onCompleteItem = (item: any, response: any, status: any, headers: any) => {
+         console.log('ImageUpload:uploaded:', item, status, response);
+    };
+  }
+
+  updateBook(){
+    console.log(this.book);
+    this.book['file'] = this.file.slice(12);
+    this.library.editBook(this.book).subscribe();    
+    this.router.navigateByUrl("/main/updatebook");
   }
 
 }

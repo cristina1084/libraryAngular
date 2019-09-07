@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 
+import { FileSelectDirective } from 'ng2-file-upload';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -36,7 +38,8 @@ import { LibraryService } from "./library.service";
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    MainComponent
+    MainComponent,
+    FileSelectDirective
   ],
   imports: [
     BrowserModule,

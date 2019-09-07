@@ -7,37 +7,37 @@
                     <table class="table table-borderless">
                         <tr>
                             <td> Title </td>
-                            <td> <input type="text" name="title" class="form-control" required > </td>
+                            <td> <input type="text" name="title" class="form-control" [(ngModel)]="book.bookTitle" required > </td>
                         </tr>
                         <br>
                         <tr>
                             <td> Author </td>
-                            <td> <input type="text" class="form-control" name="author" required> </td>
+                            <td> <input type="text" class="form-control" name="author" [(ngModel)]="book.author" required> </td>
                         </tr>
                         <br>
                         <tr>
                             <td> Genre </td>
-                            <td> <input type="text" class="form-control" name="genre" required> </td>
+                            <td> <input type="text" class="form-control" name="genre" [(ngModel)]="book.genre" required> </td>
                         </tr>
                         <br>
                         <tr>
                             <td> Description </td>
-                            <td> <textarea class="form-control" name="description" id="" cols="100" rows="5"></textarea> </td>
+                            <td> <textarea class="form-control" name="description" [(ngModel)]="book.description" id="" cols="100" rows="5"></textarea> </td>
                         </tr>
                         <br>
                         <tr>
                             <td> Price </td>
-                            <td> <input type="number" class="form-control" name="price"> </td>
+                            <td> <input type="number" class="form-control" name="price" [(ngModel)]="book.price"> </td>
                         </tr>
                         <br>
-                        <tr>
+                        <!-- <tr>
                             <td> Upload Image </td>
                             <td> <input type="file" class="form-control" name="bimage" required> </td>
-                        </tr>
+                        </tr> -->
                         <br>
                         <tr>
                             <td> <button type="reset" class="btn btn-primary"> Reset </button></td>
-                            <td> <button type="submit" class="btn btn-success"> Add </button></td>
+                            <td> <button type="button" (click)="addBook()" class="btn btn-success"> Add </button></td>
                         </tr>
                     </table>
                 </div>

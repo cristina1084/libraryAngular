@@ -10,15 +10,15 @@ import { LibraryService } from "../library.service";
 export class AuthordetailComponent implements OnInit {
 
   authorid;
-  author;
+  auth;
   constructor(private router: ActivatedRoute, private library: LibraryService) { }
 
   ngOnInit() {
     this.authorid = this.router.snapshot.paramMap.get('aid');
     console.log(this.authorid);
     
-    this.library.getAuthorsById(this.authorid).subscribe(data=>{
-      this.author = data[0];
+    this.library.getAuthorById(this.authorid).subscribe(data=>{
+      this.auth = data;
     })
   }
 

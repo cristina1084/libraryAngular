@@ -19,13 +19,13 @@ const routes: Routes = [
   {path:"signup", component: SignupComponent},
   {path:"main", component: MainComponent, children:[
     {path:"home", component: HomeComponent},
-    {path:"books", component: BooksComponent, },
+    {path:"books", component: BooksComponent},
     {path:"authors", component: AuthorsComponent},
     {path:"addbook", component: AddbookComponent },
-    {path:":aid", component: AuthordetailComponent},
-    {path:"editbook", component: EditbookComponent},
+    {path:"editbook/:bid", component: EditbookComponent},
     {path:"updatebook", component: UpdatebookComponent},
-    {path:":bid", component: ReadmoreComponent}
+    {path:"books/:bid", component: ReadmoreComponent},
+    {path:"authors/:aid", component: AuthordetailComponent}
 
   ]},  
 ];

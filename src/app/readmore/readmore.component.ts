@@ -19,7 +19,7 @@ export class ReadmoreComponent implements OnInit {
     
     this.library.getBookById(this.bookid).subscribe(data=>{
       console.log(data);
-      this.book = data[0];
+      this.book = data;
     })
 
   }
