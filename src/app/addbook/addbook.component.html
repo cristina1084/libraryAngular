@@ -30,14 +30,14 @@
                             <td> <input type="number" class="form-control" name="price" [(ngModel)]="book.price"> </td>
                         </tr>
                         <br>
-                        <!-- <tr>
+                        <tr>
                             <td> Upload Image </td>
-                            <td> <input type="file" class="form-control" name="bimage" required> </td>
-                        </tr> -->
+                            <td> <input type="file" class="form-control" name="bimage" [(ngModel)]="file" ng2FileSelect [uploader]="uploader" > </td>
+                        </tr>
                         <br>
                         <tr>
                             <td> <button type="reset" class="btn btn-primary"> Reset </button></td>
-                            <td> <button type="button" (click)="addBook()" class="btn btn-success"> Add </button></td>
+                            <td> <button type="button" (click)="uploader.uploadAll(); addBook()" class="btn btn-success" [disabled]="!uploader.getNotUploadedItems().length"> Add </button></td>
                         </tr>
                     </table>
                 </div>
