@@ -35,4 +35,8 @@ export class LibraryService {
   addNewBook(book){
     return this.http.post("http://localhost:8080/books/add/", book)
   }
+
+  addUser(user){
+    return this.http.post("http://localhost:8080/signup", user)
+  }
 }
