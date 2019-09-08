@@ -26,7 +26,10 @@ export class LoginComponent implements OnInit {
   login(){
     console.log(this.credintials);
     this.library.getUser(this.credintials).subscribe(data=>{
-      if (data['found'] == true) this.router.navigateByUrl("/main/home");
+      if (data['found'] == true){
+        localStorage.setItem("Username",this.credintials['username'])
+        this.router.navigateByUrl("/main/home");
+      } 
       else {
         this.alert = true;
         this.router.navigateByUrl("");
