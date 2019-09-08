@@ -47,4 +47,5 @@ export class LibraryService {
   checkUsernameEmail(user){
     return this.http.get("http://localhost:8080/signup/"+user['username'])
   }
+  
 }

@@ -26,7 +26,6 @@ const routes: Routes = [
     {path:"updatebook", component: UpdatebookComponent},
     {path:"books/:bid", component: ReadmoreComponent},
     {path:"authors/:aid", component: AuthordetailComponent}
-
   ]},  
 ];
 
