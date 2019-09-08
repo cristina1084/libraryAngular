@@ -52,6 +52,10 @@
                             <td></td>
                             <td>This field is required</td>
                         </tr>
+                        <tr class="text-danger" *ngIf="registerForm.controls['role'].hasError('pattern') && (registerForm.controls['role'].dirty || registerForm.controls['role'].touched)">
+                            <td></td>
+                            <td>Admin or User</td>
+                        </tr>
                         <br>
                         <tr>
                             <td> Username </td>
@@ -60,6 +64,10 @@
                         <tr class="text-danger" *ngIf="registerForm.controls['username'].hasError('required') && (registerForm.controls['username'].dirty || registerForm.controls['username'].touched)">
                             <td></td>
                             <td>This field is required</td>
+                        </tr>
+                        <tr class="text-danger" *ngIf="alert">
+                            <td></td>
+                            <td>Username Exists</td>
                         </tr>
                         <br>
                         <tr>

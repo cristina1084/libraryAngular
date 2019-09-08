@@ -39,4 +39,12 @@ export class LibraryService {
   addUser(user){
     return this.http.post("http://localhost:8080/signup", user)
   }
+
+  getUser(user){
+    return this.http.post("http://localhost:8080/login", user);
+  }
+
+  checkUsernameEmail(user){
+    return this.http.get("http://localhost:8080/signup/"+user['username'])
+  }
 }
