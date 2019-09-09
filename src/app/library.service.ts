@@ -9,43 +9,43 @@ export class LibraryService {
   constructor(private http: HttpClient) { }
   
   getBooks(){
-    return this.http.get("http://localhost:8080/books/getbooks");
+    return this.http.get("https://library-server-assignment.herokuapp.com/books/getbooks");
   }
 
   getBookById(bid){
-    return this.http.get("http://localhost:8080/books/" + bid);
+    return this.http.get("https://library-server-assignment.herokuapp.com/books/" + bid);
   }
 
   getAuthors(){
-    return this.http.get("http://localhost:8080/authors/getauthors");
+    return this.http.get("https://library-server-assignment.herokuapp.com/authors/getauthors");
   }
 
   getAuthorById(aid){
-    return this.http.get("http://localhost:8080/authors/" + aid);
+    return this.http.get("https://library-server-assignment.herokuapp.com/authors/" + aid);
   }
 
   deleteBook(dbid){
-    return this.http.get("http://localhost:8080/books/delete/" + dbid);
+    return this.http.get("https://library-server-assignment.herokuapp.com/books/delete/" + dbid);
   }
 
   editBook(data){
-    return this.http.post("http://localhost:8080/books/edit/", data)
+    return this.http.post("https://library-server-assignment.herokuapp.com/books/edit/", data)
   }
 
   addNewBook(book){
-    return this.http.post("http://localhost:8080/books/add/", book)
+    return this.http.post("https://library-server-assignment.herokuapp.com/books/add/", book)
   }
 
   addUser(user){
-    return this.http.post("http://localhost:8080/signup", user)
+    return this.http.post("https://library-server-assignment.herokuapp.com/signup", user)
   }
 
   getUser(user){
-    return this.http.post("http://localhost:8080/login", user);
+    return this.http.post("https://library-server-assignment.herokuapp.com/login", user);
   }
 
   checkUsernameEmail(user){
-    return this.http.get("http://localhost:8080/signup/"+user['username'])
+    return this.http.get("https://library-server-assignment.herokuapp.com/signup/"+user['username'])
   }
   
 }

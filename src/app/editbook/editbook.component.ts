@@ -3,7 +3,7 @@ import { Router, ActivatedRoute } from "@angular/router";
 import { LibraryService } from "../library.service";
 import {  FileUploader, FileSelectDirective } from 'ng2-file-upload/ng2-file-upload';
 
-const URL = 'http://localhost:8080/books/edit';
+const URL = 'https://library-server-assignment.herokuapp.com/books/edit';
 
 @Component({
   selector: 'app-editbook',
