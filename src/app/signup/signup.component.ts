@@ -12,7 +12,7 @@ import { Router } from "@angular/router";
 export class SignupComponent implements OnInit {
 
   registerForm: FormGroup;
-  user = {};
+  user = {name:'', email:'', mobile:0, role:'', username: '', password: ''};
   alert: Boolean = false;
 
   constructor(private library: LibraryService, private formBuilder: FormBuilder, private router: Router) { }

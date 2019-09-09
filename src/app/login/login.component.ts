@@ -10,7 +10,7 @@ import { LibraryService } from "../library.service";
 })
 export class LoginComponent implements OnInit {
 
-  credintials = {};
+  credintials = {username:'', password:''};
   loginForm : FormGroup;
   alert: Boolean = false;
 
