@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 
-import { FileUploadModule } from 'ng2-file-upload';
+import { FileUploadModule, FileSelectDirective } from 'ng2-file-upload';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -38,17 +38,17 @@ import { LibraryService } from "./library.service";
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    MainComponent,
-    FileUploadModule
+    MainComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FileUploadModule
   ],
-  providers: [LibraryService],
+  providers: [LibraryService, FileSelectDirective],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
