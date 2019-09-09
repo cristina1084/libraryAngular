@@ -13,7 +13,13 @@ const URL = 'https://library-server-assignment.herokuapp.com/books/edit';
 export class EditbookComponent implements OnInit {
 
   bookid;
-  book={};
+  book = {
+    bookTitle:'',
+    author:'',
+    genre:'',
+    description:'',
+    price:0,
+  };
   file;
   public uploader: FileUploader = new FileUploader({ url: URL, itemAlias: 'bimage' });
 
@@ -25,7 +31,11 @@ export class EditbookComponent implements OnInit {
     
     this.library.getBookById(this.bookid).subscribe(data=>{
       console.log(data);
-      this.book = data;
+      this.book['bookTitle'] = data['bookTitle'];
+      this.book['author'] = data['author'];
+      this.book['genre'] = data['genre'];
+      this.book['description'] = data['description'];
+      this.book['price'] = data['price'];
     });
 
     this.uploader.onAfterAddingFile = (file) => { file.withCredentials = false; };

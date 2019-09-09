@@ -14,7 +14,13 @@ export class AddbookComponent implements OnInit {
 
   constructor(private router: Router, private route: ActivatedRoute, private library: LibraryService) { }
 
-  book = {};
+  book = {
+    bookTitle:'',
+    author:'',
+    genre:'',
+    description:'',
+    price:null,
+  };
   file;
   public uploader: FileUploader = new FileUploader({ url: URL, itemAlias: 'bimage' });
 
